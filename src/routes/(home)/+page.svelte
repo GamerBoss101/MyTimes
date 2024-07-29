@@ -51,11 +51,6 @@
         height: 100vh;
     }
 
-    h1 {
-        color: white;
-        padding: 20px;
-    }
-
     .col {
         display: flex;
         justify-content: center;
