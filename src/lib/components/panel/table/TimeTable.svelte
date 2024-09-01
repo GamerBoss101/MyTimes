@@ -1,13 +1,18 @@
 
 <script>
     import TimeRecord from "./TimeRecord.svelte";
+    import AddTimeBtn from "./AddTimeBtn.svelte";
     export let sport;
     export let data;
 </script>
 
 <div class="card shadow">
     <div class="card-header py-3">
-        <p class="text-primary m-0 fw-bold">{sport}</p>
+        <h3 style="display: inline-block;" class="text-primary m-0 fw-bold">{sport}</h3>
+        <div style="float: right;">
+            <AddTimeBtn />
+            <button class="btn btn-primary" type="button">Export</button>
+        </div>
     </div>
     <div class="card-body">
         <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
@@ -19,6 +24,7 @@
                         <th>Offical</th>
                         <th>Officiary</th>
                         <th>Date</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,3 +36,10 @@
         </div>
     </div>
 </div>
+
+<style>
+    .table {
+        max-height: 250px;
+    }
+
+</style>

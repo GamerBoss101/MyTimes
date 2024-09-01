@@ -1,13 +1,5 @@
 <script>
-    import "$lib/bootstrap/css/bootstrap.min.css";
-
-    import { dev } from '$app/environment';
-    import { inject } from '@vercel/analytics';
-    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
-
-    injectSpeedInsights();
-    inject({ mode: dev ? 'development' : 'production' });
-    
+    import "$lib/bootstrap/css/bootstrap.min.css";    
 </script>
 
 <svelte:head>

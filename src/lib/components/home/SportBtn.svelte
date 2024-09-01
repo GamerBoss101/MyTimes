@@ -4,7 +4,7 @@
 
     export let icon;
     export let url;
-    let container: HTMLDivElement;
+    let container;
 
     onMount(() => {
         const bodyELE = document.querySelector('body');
