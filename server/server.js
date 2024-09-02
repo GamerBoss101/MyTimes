@@ -7,6 +7,7 @@ import cors from 'cors';
 import fs from 'fs';
 import ms from 'ms';
 import Mongo from './storage/Mongo.js';
+import APISession from './APISession.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ const MongoServer = new Mongo(process.env.MONGO_URI);
 
 app.use(cors());
 app.set("mongo", MongoServer);
+app.set("session", new APISession());
 
 async function loadFolder(filePath) {
     let files = [];

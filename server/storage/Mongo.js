@@ -1,14 +1,12 @@
 import mongoose from "mongoose";
-import Commissions from "./collections/commission.js";
 import Users from "./collections/users.js";
-import Reviews from "./collections/reviews.js";
+import Times from "./collections/times.js";
 
 export default class Mongo {
     constructor(uri) {
         this.connect(uri);
-        this.commissions = new Commissions();
+        this.times = new Times();
         this.users = new Users();
-        this.reviews = new Reviews();
     }
 
     async connect(uri) {

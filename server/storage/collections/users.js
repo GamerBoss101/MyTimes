@@ -13,8 +13,8 @@ const UserSchema = new mongoose.Schema({
     username: reqString,
     email: reqString,
     password: reqString,
-    sports: reqString,
-    awards: reqString
+    sports: Array,
+    awards: Array
 }, { timestamps: true });
 
 export default class Users {
@@ -60,6 +60,12 @@ export default class Users {
 
     async get(Id) {
         let data = await this.model.findOne({ id: Id });
+        if(data) data.password = undefined;
+        return data;
+    }
+
+    async getByUsername(username) {
+        let data = await this.model.findOne({ username: username }) || await this.model.findOne({ email: username });
         if(data) data.password = undefined;
         return data;
     }
